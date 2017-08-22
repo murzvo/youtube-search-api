@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+  height: 100vh;
+}
+
+.App-header {
+  height: 10%;
+  padding: 20px;
+}
+
+.App-intro {
+  background-color: #fafafa;
+  height: 90%;
+  font-size: large;
+  margin: 0;
+  padding: 20px 0 0 0;
+}
+
+.Search-input {
+  width: 80%;
+  height: 40px;
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
