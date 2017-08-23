@@ -8,18 +8,36 @@ import './App.css';
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.onSearchChange = this.onSearchChange.bind(this);
+  }
+
+  state = { search: '' }
+
   componentDidMount() {
     this.props.initData();
   }
+
+  onSearchChange(e) {
+    this.setState({ search: e.target.value });
+  }
+
+  sortedVideos() {
+   if (!this.props.videos) return;
+   const search = this.state.search.toLowerCase();
+   return this.props.videos.filter(function(video) { return video.title.toLowerCase().indexOf(search) !== -1 })
+ }
 
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <input type="text" className="Search-input" />
+          <input type="text" className="Search-input" onChange={this.onSearchChange} />
         </div>
         <div className="App-intro">
-          <VideosList videos={this.props.videos} />
+          <VideosList videos={this.sortedVideos()} />
         </div>
       </div>
     );

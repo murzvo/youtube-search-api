@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class VideosList extends Component {
   render() {
     if (!this.props.videos) return (<div>No content available</div>);
-    console.log(this.props.videos);
     return (
       <div className="videos-list">
         {this.props.videos.map(function(video){
